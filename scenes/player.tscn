@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf1s71hdouxvq"]
+
+[ext_resource type="Texture2D" uid="uid://dhpqpxo3d5ajd" path="res://assets/Cat Sprite Sheet.png" id="1_jkv5c"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_pfv0f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwcmr"]
+atlas = ExtResource("1_jkv5c")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp8m3"]
+atlas = ExtResource("1_jkv5c")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg1ga"]
+atlas = ExtResource("1_jkv5c")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fevs5"]
+atlas = ExtResource("1_jkv5c")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ov02c"]
+animations = [{
+"frames": [SubResource("AtlasTexture_vwcmr"), SubResource("AtlasTexture_pp8m3"), SubResource("AtlasTexture_gg1ga"), SubResource("AtlasTexture_fevs5")],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo3nw"]
+radius = 3.0
+height = 10.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pfv0f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+frames = SubResource("SpriteFrames_ov02c")
+playing = true
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fo3nw")
