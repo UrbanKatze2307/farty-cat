@@ -33,31 +33,72 @@ shape = SubResource("RectangleShape2D_r5nd8")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Pipe1" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(519, 546)
+position = Vector2(519, 499)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe2" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(839, 273)
+position = Vector2(839, 444)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe3" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1159, 370)
+position = Vector2(1159, 390)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe4" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1479, 173)
+position = Vector2(1479, 205)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe5" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1799, 539)
+position = Vector2(1799, 189)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_fekvp")]
 position = Vector2(160, 360)
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPoints" type="Label" parent="Control"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 14.0
+offset_right = 20.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelDead" type="Label" parent="Control"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -51.0
+offset_right = 246.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 72
+text = "You Are Dead!"
+
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="fart" from="Player" to="." method="_on_player_fart"]

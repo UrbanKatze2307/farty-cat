@@ -17,6 +17,7 @@ func _physics_process(_delta: float) -> void:
 	$SpriteDown.position.y = gap_size / 2
 	$CollisionShapeUp.position.y = -160 -gap_size / 2
 	$CollisionShapeDown.position.y = 160 +gap_size / 2
+	$AreaPoints/CollisionShape2D.shape.size.y = gap_size
 	
 	$SpriteUp.modulate = color
 	$SpriteDown.modulate = color
@@ -24,3 +25,7 @@ func _physics_process(_delta: float) -> void:
 	if position.x < -46:
 		position.x = 1234 + 80*4
 		position.y = randi_range(160, 560)
+
+
+func _on_area_points_area_exited(_area: Area2D) -> void:
+	Global.points += 1
