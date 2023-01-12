@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://kjnhquobufdc"]
+[gd_scene load_steps=9 format=3 uid="uid://kjnhquobufdc"]
 
 [ext_resource type="PackedScene" uid="uid://bf1s71hdouxvq" path="res://scenes/player.tscn" id="1_fekvp"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_j46t2"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="2_j1koh"]
 [ext_resource type="PackedScene" uid="uid://cy8hpfp3doqyb" path="res://scenes/pipe.tscn" id="2_n1m3d"]
+[ext_resource type="Theme" uid="uid://dc0k6y4c5kqq8" path="res://assets/Theme.tres" id="4_y6yfu"]
 
 [sub_resource type="Gradient" id="Gradient_ckw5d"]
 offsets = PackedFloat32Array(1)
@@ -18,7 +20,16 @@ size = Vector2(1280, 50)
 [node name="World" type="Node2D"]
 script = ExtResource("1_j46t2")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource("2_j1koh")
+
+[node name="Timer" type="Timer" parent="Camera2D"]
+wait_time = 0.2
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(0, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -33,44 +44,47 @@ shape = SubResource("RectangleShape2D_r5nd8")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Pipe1" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(519, 499)
+position = Vector2(519, 162)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe2" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(839, 444)
+position = Vector2(839, 317)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe3" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1159, 390)
+position = Vector2(1159, 310)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe4" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1479, 205)
+position = Vector2(1479, 347)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Pipe5" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1799, 189)
+position = Vector2(1799, 409)
 gap_size = 40
 color = Color(0.345098, 0.858824, 0.0823529, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_fekvp")]
 position = Vector2(160, 360)
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_y6yfu")
 
-[node name="LabelPoints" type="Label" parent="Control"]
+[node name="LabelPoints" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -84,21 +98,80 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelDead" type="Label" parent="Control"]
-visible = false
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -246.0
-offset_top = -51.0
-offset_right = 246.0
-offset_bottom = 51.0
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 72
+
+[node name="LabelTitle" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.5
+offset_top = 21.0
+offset_right = 104.5
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "Farty Cat"
+
+[node name="LabelDead" type="Label" parent="CanvasLayer/Control/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.0
+offset_top = 21.0
+offset_right = 163.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
 text = "You Are Dead!"
 
+[node name="ButtonPlay" type="Button" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="ButtonTryAgain" type="Button" parent="CanvasLayer/Control/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Try again"
+
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="fart" from="Player" to="." method="_on_player_fart"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]

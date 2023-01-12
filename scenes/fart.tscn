@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bnscx607lfdce" path="res://assets/farts/fart08.png" id="9_pl578"]
 [ext_resource type="Script" path="res://scripts/fart.gd" id="10_v7yby"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5oco7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6jjit"]
 animations = [{
 "frames": [ExtResource("1_0vyx1"), ExtResource("2_k4wqv"), ExtResource("3_80qvx"), ExtResource("4_3glqf"), ExtResource("5_2bb8e"), ExtResource("6_n318q"), ExtResource("7_q0rku"), ExtResource("8_q38kw"), ExtResource("9_pl578")],
 "loop": true,
@@ -22,7 +22,7 @@ animations = [{
 [node name="Fart" type="AnimatedSprite2D"]
 position = Vector2(-7, -1.5)
 scale = Vector2(0.05, 0.05)
-frames = SubResource("SpriteFrames_5oco7")
+frames = SubResource("SpriteFrames_6jjit")
 frame = 5
 script = ExtResource("10_v7yby")
 

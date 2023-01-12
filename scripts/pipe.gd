@@ -9,7 +9,7 @@ extends StaticBody2D
 
 func _ready() -> void:
 	randomize()
-	position.y = randi_range(160, 560)
+	randomize_y_pos()
 
 
 func _physics_process(_delta: float) -> void:
@@ -27,5 +27,15 @@ func _physics_process(_delta: float) -> void:
 		position.y = randi_range(160, 560)
 
 
+
+func randomize_y_pos() -> void:
+	position.y = randi_range(160, 560)
+
+
+
 func _on_area_points_area_exited(_area: Area2D) -> void:
+	if Global.reset_points:
+		Global.points = 0
+		Global.reset_points = false
+		return
 	Global.points += 1

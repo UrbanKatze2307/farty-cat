@@ -11,7 +11,7 @@ const GRAVITY = 9.81 * 120
 
 
 func _physics_process(delta: float) -> void:
-	if Global.player_dead:
+	if Global.player_dead or Global.paused:
 		sprite.playing = false
 		return
 	else:
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if Global.player_dead:
+	if Global.player_dead or Global.paused:
 		return
 	
 	if event is InputEventKey:
@@ -36,6 +36,13 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_FORCE
 		emit_signal("fart")
+
+
+
+func reset() -> void:
+	position.y = 360
+	velocity.y = 0
+
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:

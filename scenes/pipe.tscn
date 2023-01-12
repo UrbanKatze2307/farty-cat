@@ -13,7 +13,7 @@ size = Vector2(22, 319)
 size = Vector2(15, 40)
 
 [node name="Pipe" type="StaticBody2D"]
-position = Vector2(0, 433)
+position = Vector2(0, 530)
 scale = Vector2(4, 4)
 script = ExtResource("1_flm7b")
 
