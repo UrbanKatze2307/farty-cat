@@ -6,7 +6,6 @@ extends StaticBody2D
 @export_color_no_alpha var color:Color = Color(1,1,1)
 
 
-
 func _ready() -> void:
 	randomize()
 	randomize_y_pos()
@@ -22,6 +21,11 @@ func _physics_process(_delta: float) -> void:
 	$SpriteUp.modulate = color
 	$SpriteDown.modulate = color
 	
+	if Global.reset_points:
+		Global.points = 0
+		await get_tree().create_timer(0.1).timeout
+		Global.reset_points = false
+	
 	if position.x < -46:
 		position.x = 1234 + 80*4
 		position.y = randi_range(160, 560)
@@ -34,8 +38,4 @@ func randomize_y_pos() -> void:
 
 
 func _on_area_points_area_exited(_area: Area2D) -> void:
-	if Global.reset_points:
-		Global.points = 0
-		Global.reset_points = false
-		return
 	Global.points += 1

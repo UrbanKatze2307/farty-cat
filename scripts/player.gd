@@ -8,6 +8,11 @@ const JUMP_FORCE = -480
 const GRAVITY = 9.81 * 120
 
 @onready var sprite = $AnimatedSprite2D
+@onready var audio_fart = $AudioFart
+
+
+func _ready() -> void:
+	randomize()
 
 
 func _physics_process(delta: float) -> void:
@@ -32,9 +37,13 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventKey:
 		velocity.y = JUMP_FORCE
+		audio_fart.pitch_scale = randf_range(0.6, 1.4)
+		audio_fart.play()
 		emit_signal("fart")
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_FORCE
+		audio_fart.pitch_scale = randf_range(0.6, 1.4)
+		audio_fart.play()
 		emit_signal("fart")
 
 

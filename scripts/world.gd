@@ -14,6 +14,8 @@ extends Node2D
 @onready var button_try_again = $CanvasLayer/Control/Panel/ButtonTryAgain
 @onready var menu = $CanvasLayer/Control/Panel
 
+@onready var audio_click = $CanvasLayer/Control/AudioClick
+
 var fart = preload("res://scenes/fart.tscn")
 
 
@@ -52,6 +54,7 @@ func _on_player_fart() -> void:
 func _on_button_play_pressed() -> void:
 	menu.visible = false
 	Global.paused = false
+	audio_click.play()
 
 
 func _on_button_try_again_pressed() -> void:
@@ -74,3 +77,4 @@ func _on_button_try_again_pressed() -> void:
 				pos_x = 1799
 		i.position.x = pos_x
 	Global.reset_points = true
+	audio_click.play()
