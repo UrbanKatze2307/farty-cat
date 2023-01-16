@@ -19,20 +19,14 @@ func _ready() -> void:
 
 
 func get_new_track(current:int) -> int:
-	print("Input: " + var_to_str(current))
 	var new = randi_range(0,4)
-	print("Mid Result: " + var_to_str(new))
 	if new == current:
-		print("Matched current, passing")
 		new = get_new_track(current)
-	print("Result: " + var_to_str(new))
 	return new
 
 
 func _on_finished() -> void:
-	print("START NEW VAR")
 	current_track = get_new_track(current_track)
-	print("END RESULT: " + var_to_str(current_track))
 	stream = tracks[current_track]
 	await get_tree().create_timer(1).timeout
 	play()

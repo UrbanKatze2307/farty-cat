@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dc0k6y4c5kqq8"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dc0k6y4c5kqq8"]
+
+[ext_resource type="FontFile" uid="uid://cwws8ke6al57f" path="res://assets/Kenney Mini.ttf" id="1_w4css"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nfh1"]
 bg_color = Color(0.117647, 0.117647, 0.156863, 0.941176)
@@ -76,6 +78,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [resource]
+default_font = ExtResource("1_w4css")
 Button/font_sizes/font_size = 24
 Button/styles/disabled = SubResource("StyleBoxFlat_3nfh1")
 Button/styles/focus = SubResource("StyleBoxEmpty_ovb3l")

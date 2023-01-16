@@ -3,7 +3,8 @@ extends StaticBody2D
 
 
 @export_range(0,100,.1) var gap_size:int = 0
-@export_color_no_alpha var color:Color = Color(1,1,1)
+
+@onready var audio_point = $AudioPoint
 
 
 func _ready() -> void:
@@ -18,8 +19,8 @@ func _physics_process(_delta: float) -> void:
 	$CollisionShapeDown.position.y = 160 +gap_size / 2
 	$AreaPoints/CollisionShape2D.shape.size.y = gap_size
 	
-	$SpriteUp.modulate = color
-	$SpriteDown.modulate = color
+	$SpriteUp.modulate = Global.pipe_colors[Global.current_pipe_color]
+	$SpriteDown.modulate = Global.pipe_colors[Global.current_pipe_color]
 	
 	if Global.reset_points:
 		Global.points = 0
@@ -33,9 +34,11 @@ func _physics_process(_delta: float) -> void:
 
 
 func randomize_y_pos() -> void:
-	position.y = randi_range(160, 560)
+	position.y = (randi_range(0, 40) * 10) + 160
 
 
 
 func _on_area_points_area_exited(_area: Area2D) -> void:
 	Global.points += 1
+	if !Global.sfx_muted:
+		audio_point.play()

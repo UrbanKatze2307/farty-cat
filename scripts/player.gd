@@ -16,6 +16,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	$AnimatedSprite2D.modulate = Global.cat_colors[Global.current_cat_color]
+	
 	if Global.player_dead or Global.paused:
 		sprite.playing = false
 		return
@@ -31,19 +33,15 @@ func _physics_process(delta: float) -> void:
 	rotation_degrees = velocity.y / 18
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Global.player_dead or Global.paused:
 		return
 	
-	if event is InputEventKey:
-		velocity.y = JUMP_FORCE
-		audio_fart.pitch_scale = randf_range(0.6, 1.4)
-		audio_fart.play()
-		emit_signal("fart")
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_FORCE
-		audio_fart.pitch_scale = randf_range(0.6, 1.4)
-		audio_fart.play()
+		if !Global.sfx_muted:
+			audio_fart.pitch_scale = randf_range(0.6, 1.4)
+			audio_fart.play()
 		emit_signal("fart")
 
 
