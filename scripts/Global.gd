@@ -21,12 +21,26 @@ var current_pipe_color:int = 0
 var cat_colors:Array = [
 	Color(1,1,1),
 	Color(1,0.67,0.39),
-	Color(0.39,0.39,0.39)
+	Color(0.39,0.39,0.39),
+	Color(0.54,0.82,0.36),
+	Color(0.95,0.59,0.82),
+	Color(0.07,0.82,0.94),
+	Color(1,1,.31),
+	Color(0.47,0.36,1),
+	Color(1,0.05,0.35),
+	Color(1,1,1,0.33)
 ]
 var pipe_colors:Array = [
 	Color(0.35,0.86,0.08),
 	Color(1,1,0.38),
-	Color(1,0.05,0.35)
+	Color(1,0.05,0.35),
+	Color(0.95,0.59,0.82),
+	Color(0.47,0.36,1),
+	Color(1,0.46,0.18),
+	Color(0.07,0.82,0.94),
+	Color(1,1,1),
+	Color(0.35,0.35,0.35),
+	Color(1,1,1,0.33)
 ]
 
 

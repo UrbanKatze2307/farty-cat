@@ -29,7 +29,6 @@ script = ExtResource("1_j46t2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-current = true
 script = ExtResource("2_j1koh")
 
 [node name="Timer" type="Timer" parent="Camera2D"]
@@ -51,23 +50,23 @@ shape = SubResource("RectangleShape2D_r5nd8")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Pipe1" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1019, 280)
+position = Vector2(1019, 530)
 gap_size = 40
 
 [node name="Pipe2" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1339, 550)
+position = Vector2(1339, 520)
 gap_size = 40
 
 [node name="Pipe3" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1659, 380)
+position = Vector2(1659, 470)
 gap_size = 40
 
 [node name="Pipe4" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(1979, 430)
+position = Vector2(1979, 230)
 gap_size = 40
 
 [node name="Pipe5" parent="." instance=ExtResource("2_n1m3d")]
-position = Vector2(2299, 470)
+position = Vector2(2299, 350)
 gap_size = 40
 
 [node name="Player" parent="." instance=ExtResource("1_fekvp")]
@@ -127,7 +126,7 @@ offset_right = 104.5
 offset_bottom = 91.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
-text = "Farty Cat"
+text = "Farting Cat"
 
 [node name="LabelDead" type="Label" parent="CanvasLayer/Control/Panel"]
 visible = false
@@ -475,8 +474,422 @@ text = "5 pts"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ButtonGreen" type="Button" parent="CanvasLayer/Control/PanelShop/GridCats"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonGreen"]
+modulate = Color(0.54, 0.82, 0.36, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -0.05
+anchor_right = 0.125
+anchor_bottom = -0.05
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_aqrvh")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonGreen"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonGreen"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -36.0
+offset_right = 22.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "10 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPink" type="Button" parent="CanvasLayer/Control/PanelShop/GridCats"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonPink"]
+modulate = Color(0.95, 0.59, 0.82, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -0.05
+anchor_right = 0.125
+anchor_bottom = -0.05
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_aqrvh")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonPink"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonPink"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -36.0
+offset_right = 22.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "15 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBlue" type="Button" parent="CanvasLayer/Control/PanelShop/GridCats"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonBlue"]
+modulate = Color(0.07, 0.82, 0.94, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -0.05
+anchor_right = 0.125
+anchor_bottom = -0.05
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_aqrvh")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonBlue"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonBlue"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -36.0
+offset_right = 22.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "20 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonYellow" type="Button" parent="CanvasLayer/Control/PanelShop/GridCats"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonYellow"]
+modulate = Color(1, 1, 0.31, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -0.05
+anchor_right = 0.125
+anchor_bottom = -0.05
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_aqrvh")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonYellow"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonYellow"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -36.0
+offset_right = 22.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "25 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonViolet" type="Button" parent="CanvasLayer/Control/PanelShop/GridCats"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonViolet"]
+modulate = Color(0.47, 0.36, 1, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -0.05
+anchor_right = 0.125
+anchor_bottom = -0.05
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_aqrvh")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonViolet"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonViolet"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -36.0
+offset_right = 22.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "30 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonRed" type="Button" parent="CanvasLayer/Control/PanelShop/GridCats"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonRed"]
+modulate = Color(1, 0.05, 0.35, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -0.05
+anchor_right = 0.125
+anchor_bottom = -0.05
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_aqrvh")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonRed"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonRed"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -36.0
+offset_right = 22.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "35 pts
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonTrans" type="Button" parent="CanvasLayer/Control/PanelShop/GridCats"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonTrans"]
+modulate = Color(1, 1, 1, 0.33)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -0.05
+anchor_right = 0.125
+anchor_bottom = -0.05
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_aqrvh")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonTrans"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridCats/ButtonTrans"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -36.0
+offset_right = 22.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "40 pts
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GridPipes" type="GridContainer" parent="CanvasLayer/Control/PanelShop"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -673,6 +1086,425 @@ text = "5 pts"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ButtonPink" type="Button" parent="CanvasLayer/Control/PanelShop/GridPipes"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonPink"]
+modulate = Color(0.95, 0.59, 0.82, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -49.5
+offset_right = -0.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_5hmd0")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonPink"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonPink"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "10 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonViolet" type="Button" parent="CanvasLayer/Control/PanelShop/GridPipes"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonViolet"]
+modulate = Color(0.470588, 0.360784, 1, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -49.5
+offset_right = -0.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_5hmd0")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonViolet"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonViolet"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "15 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonOrange" type="Button" parent="CanvasLayer/Control/PanelShop/GridPipes"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonOrange"]
+modulate = Color(1, 0.46, 0.18, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -49.5
+offset_right = -0.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_5hmd0")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonOrange"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonOrange"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "20 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBlue" type="Button" parent="CanvasLayer/Control/PanelShop/GridPipes"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlue"]
+modulate = Color(0.07, 0.82, 0.94, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -49.5
+offset_right = -0.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_5hmd0")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlue"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlue"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "25 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonWhite" type="Button" parent="CanvasLayer/Control/PanelShop/GridPipes"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonWhite"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -49.5
+offset_right = -0.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_5hmd0")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonWhite"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonWhite"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "30 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBlack" type="Button" parent="CanvasLayer/Control/PanelShop/GridPipes"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlack"]
+modulate = Color(0.35, 0.35, 0.35, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -49.5
+offset_right = -0.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_5hmd0")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlack"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlack"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "35 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonTrans" type="Button" parent="CanvasLayer/Control/PanelShop/GridPipes"]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonTrans"]
+modulate = Color(1, 1, 1, 0.33)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -49.5
+offset_right = -0.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("7_5hmd0")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonTrans"]
+modulate = Color(1.75, 1.75, 1.75, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPrice" type="Label" parent="CanvasLayer/Control/PanelShop/GridPipes/ButtonTrans"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "40 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioClick" type="AudioStreamPlayer" parent="CanvasLayer/Control"]
 stream = ExtResource("6_5dpgy")
 
@@ -690,6 +1522,20 @@ stream = ExtResource("6_5dpgy")
 [connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonWhite" to="." method="_on_button_cat_white_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonOrange" to="." method="_on_button_cat_orange_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonBlack" to="." method="_on_button_cat_black_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonGreen" to="." method="_on_button_cat_green_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonPink" to="." method="_on_button_cat_pink_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonBlue" to="." method="_on_button_cat_blue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonYellow" to="." method="_on_button_cat_yellow_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonViolet" to="." method="_on_button_cat_violet_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonRed" to="." method="_on_button_cat_red_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridCats/ButtonTrans" to="." method="_on_button_cat_trans_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonGreen" to="." method="_on_button_pipe_green_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonYellow" to="." method="_on_button_pipe_yellow_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonRed" to="." method="_on_button_pipe_red_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonPink" to="." method="_on_button_pipe_pink_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonViolet" to="." method="_on_button_pipe_violet_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonOrange" to="." method="_on_button_pipe_orange_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlue" to="." method="_on_button_pipe_blue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonWhite" to="." method="_on_button_pipe_white_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonBlack" to="." method="_on_button_pipe_black_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelShop/GridPipes/ButtonTrans" to="." method="_on_button_pipe_trans_pressed"]

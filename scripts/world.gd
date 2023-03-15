@@ -21,9 +21,23 @@ extends Node2D
 @onready var button_cat_white = $CanvasLayer/Control/PanelShop/GridCats/ButtonWhite
 @onready var button_cat_orange = $CanvasLayer/Control/PanelShop/GridCats/ButtonOrange
 @onready var button_cat_black = $CanvasLayer/Control/PanelShop/GridCats/ButtonBlack
+@onready var button_cat_green = $CanvasLayer/Control/PanelShop/GridCats/ButtonGreen
+@onready var button_cat_pink = $CanvasLayer/Control/PanelShop/GridCats/ButtonPink
+@onready var button_cat_blue = $CanvasLayer/Control/PanelShop/GridCats/ButtonBlue
+@onready var button_cat_yellow = $CanvasLayer/Control/PanelShop/GridCats/ButtonYellow
+@onready var button_cat_violet = $CanvasLayer/Control/PanelShop/GridCats/ButtonViolet
+@onready var button_cat_red = $CanvasLayer/Control/PanelShop/GridCats/ButtonRed
+@onready var button_cat_trans = $CanvasLayer/Control/PanelShop/GridCats/ButtonTrans
 @onready var button_pipe_green = $CanvasLayer/Control/PanelShop/GridPipes/ButtonGreen
 @onready var button_pipe_yellow = $CanvasLayer/Control/PanelShop/GridPipes/ButtonYellow
 @onready var button_pipe_red = $CanvasLayer/Control/PanelShop/GridPipes/ButtonRed
+@onready var button_pipe_pink = $CanvasLayer/Control/PanelShop/GridPipes/ButtonPink
+@onready var button_pipe_violet = $CanvasLayer/Control/PanelShop/GridPipes/ButtonViolet
+@onready var button_pipe_orange = $CanvasLayer/Control/PanelShop/GridPipes/ButtonOrange
+@onready var button_pipe_blue = $CanvasLayer/Control/PanelShop/GridPipes/ButtonBlue
+@onready var button_pipe_white = $CanvasLayer/Control/PanelShop/GridPipes/ButtonWhite
+@onready var button_pipe_black = $CanvasLayer/Control/PanelShop/GridPipes/ButtonBlack
+@onready var button_pipe_trans = $CanvasLayer/Control/PanelShop/GridPipes/ButtonTrans
 
 @onready var audio_click = $CanvasLayer/Control/AudioClick
 
@@ -55,6 +69,83 @@ func _physics_process(delta: float) -> void:
 
 
 func check_shop_items() -> void:
+	if Global.high_score >= 40:
+		button_cat_trans.disabled = false
+		button_cat_trans.get_child(2).text = "unlocked"
+		button_pipe_trans.disabled = false
+		button_pipe_trans.get_child(2).text = "unlocked"
+	else:
+		button_cat_trans.disabled = true
+		button_cat_trans.get_child(2).text = "40 pts"
+		button_pipe_trans.disabled = true
+		button_pipe_trans.get_child(2).text = "40 pts"
+	
+	if Global.high_score >= 35:
+		button_cat_red.disabled = false
+		button_cat_red.get_child(2).text = "unlocked"
+		button_pipe_black.disabled = false
+		button_pipe_black.get_child(2).text = "unlocked"
+	else:
+		button_cat_red.disabled = true
+		button_cat_red.get_child(2).text = "35 pts"
+		button_pipe_black.disabled = true
+		button_pipe_black.get_child(2).text = "35 pts"
+	
+	if Global.high_score >= 30:
+		button_cat_violet.disabled = false
+		button_cat_violet.get_child(2).text = "unlocked"
+		button_pipe_white.disabled = false
+		button_pipe_white.get_child(2).text = "unlocked"
+	else:
+		button_cat_violet.disabled = true
+		button_cat_violet.get_child(2).text = "30 pts"
+		button_pipe_white.disabled = true
+		button_pipe_white.get_child(2).text = "30 pts"
+	
+	if Global.high_score >= 25:
+		button_cat_yellow.disabled = false
+		button_cat_yellow.get_child(2).text = "unlocked"
+		button_pipe_blue.disabled = false
+		button_pipe_blue.get_child(2).text = "unlocked"
+	else:
+		button_cat_yellow.disabled = true
+		button_cat_yellow.get_child(2).text = "25 pts"
+		button_pipe_blue.disabled = true
+		button_pipe_blue.get_child(2).text = "25 pts"
+	
+	if Global.high_score >= 20:
+		button_cat_blue.disabled = false
+		button_cat_blue.get_child(2).text = "unlocked"
+		button_pipe_orange.disabled = false
+		button_pipe_orange.get_child(2).text = "unlocked"
+	else:
+		button_cat_blue.disabled = true
+		button_cat_blue.get_child(2).text = "20 pts"
+		button_pipe_orange.disabled = true
+		button_pipe_orange.get_child(2).text = "20 pts"
+	
+	if Global.high_score >= 15:
+		button_cat_pink.disabled = false
+		button_cat_pink.get_child(2).text = "unlocked"
+		button_pipe_violet.disabled = false
+		button_pipe_violet.get_child(2).text = "unlocked"
+	else:
+		button_cat_pink.disabled = true
+		button_cat_pink.get_child(2).text = "15 pts"
+		button_pipe_violet.disabled = true
+		button_pipe_violet.get_child(2).text = "15 pts"
+	
+	if Global.high_score >= 10:
+		button_cat_green.disabled = false
+		button_cat_green.get_child(2).text = "unlocked"
+		button_pipe_pink.disabled = false
+		button_pipe_pink.get_child(2).text = "unlocked"
+	else:
+		button_cat_green.disabled = true
+		button_cat_green.get_child(2).text = "10 pts"
+		button_pipe_pink.disabled = true
+		button_pipe_pink.get_child(2).text = "10 pts"
+	
 	if Global.high_score >= 5:
 		button_cat_black.disabled = false
 		button_cat_black.get_child(2).text = "unlocked"
@@ -86,6 +177,27 @@ func check_shop_items() -> void:
 		2:
 			button_cat_black.get_child(2).text = "selected"
 			button_cat_white.get_child(2).text = "unlocked"
+		3:
+			button_cat_green.get_child(2).text = "selected"
+			button_cat_white.get_child(2).text = "unlocked"
+		4:
+			button_cat_pink.get_child(2).text = "selected"
+			button_cat_white.get_child(2).text = "unlocked"
+		5:
+			button_cat_blue.get_child(2).text = "selected"
+			button_cat_white.get_child(2).text = "unlocked"
+		6:
+			button_cat_yellow.get_child(2).text = "selected"
+			button_cat_white.get_child(2).text = "unlocked"
+		7:
+			button_cat_violet.get_child(2).text = "selected"
+			button_cat_white.get_child(2).text = "unlocked"
+		8:
+			button_cat_red.get_child(2).text = "selected"
+			button_cat_white.get_child(2).text = "unlocked"
+		9:
+			button_cat_trans.get_child(2).text = "selected"
+			button_cat_white.get_child(2).text = "unlocked"
 	
 	match Global.current_pipe_color:
 		0:
@@ -95,6 +207,27 @@ func check_shop_items() -> void:
 			button_pipe_green.get_child(2).text = "unlocked"
 		2:
 			button_pipe_red.get_child(2).text = "selected"
+			button_pipe_green.get_child(2).text = "unlocked"
+		3:
+			button_pipe_pink.get_child(2).text = "selected"
+			button_pipe_green.get_child(2).text = "unlocked"
+		4:
+			button_pipe_violet.get_child(2).text = "selected"
+			button_pipe_green.get_child(2).text = "unlocked"
+		5:
+			button_pipe_orange.get_child(2).text = "selected"
+			button_pipe_green.get_child(2).text = "unlocked"
+		6:
+			button_pipe_blue.get_child(2).text = "selected"
+			button_pipe_green.get_child(2).text = "unlocked"
+		7:
+			button_pipe_white.get_child(2).text = "selected"
+			button_pipe_green.get_child(2).text = "unlocked"
+		8:
+			button_pipe_black.get_child(2).text = "selected"
+			button_pipe_green.get_child(2).text = "unlocked"
+		9:
+			button_pipe_trans.get_child(2).text = "selected"
 			button_pipe_green.get_child(2).text = "unlocked"
 
 
@@ -213,3 +346,59 @@ func _on_button_pipe_yellow_pressed() -> void:
 
 func _on_button_pipe_red_pressed() -> void:
 	Global.current_pipe_color = 2
+
+
+func _on_button_cat_green_pressed() -> void:
+	Global.current_cat_color = 3
+
+
+func _on_button_cat_pink_pressed() -> void:
+	Global.current_cat_color = 4
+
+
+func _on_button_cat_blue_pressed() -> void:
+	Global.current_cat_color = 5
+
+
+func _on_button_cat_yellow_pressed() -> void:
+	Global.current_cat_color = 6
+
+
+func _on_button_cat_violet_pressed() -> void:
+	Global.current_cat_color = 7
+
+
+func _on_button_cat_red_pressed() -> void:
+	Global.current_cat_color = 8
+
+
+func _on_button_pipe_pink_pressed() -> void:
+	Global.current_pipe_color = 3
+
+
+func _on_button_pipe_violet_pressed() -> void:
+	Global.current_pipe_color = 4
+
+
+func _on_button_pipe_orange_pressed() -> void:
+	Global.current_pipe_color = 5
+
+
+func _on_button_pipe_blue_pressed() -> void:
+	Global.current_pipe_color = 6
+
+
+func _on_button_pipe_white_pressed() -> void:
+	Global.current_pipe_color = 7
+
+
+func _on_button_pipe_black_pressed() -> void:
+	Global.current_pipe_color = 8
+
+
+func _on_button_pipe_trans_pressed() -> void:
+	Global.current_pipe_color = 9
+
+
+func _on_button_cat_trans_pressed() -> void:
+	Global.current_cat_color = 9

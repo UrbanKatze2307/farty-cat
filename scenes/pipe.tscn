@@ -14,7 +14,7 @@ size = Vector2(22, 319)
 size = Vector2(15, 40)
 
 [node name="Pipe" type="StaticBody2D"]
-position = Vector2(0, 400)
+position = Vector2(0, 440)
 scale = Vector2(4, 4)
 script = ExtResource("1_flm7b")
 
@@ -27,12 +27,14 @@ position = Vector2(0, 160)
 shape = SubResource("RectangleShape2D_n4uo6")
 
 [node name="SpriteUp" type="Sprite2D" parent="."]
+modulate = Color(0.35, 0.86, 0.08, 1)
 texture_filter = 1
 texture = ExtResource("1_0y6vi")
 centered = false
 offset = Vector2(-11.5, -320)
 
 [node name="SpriteDown" type="Sprite2D" parent="."]
+modulate = Color(0.35, 0.86, 0.08, 1)
 texture_filter = 1
 rotation = 3.14159
 texture = ExtResource("1_0y6vi")

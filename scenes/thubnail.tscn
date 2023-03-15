@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cguv2wxmo7mxu"]
+
+[ext_resource type="PackedScene" uid="uid://cy8hpfp3doqyb" path="res://scenes/pipe.tscn" id="1_e7fq6"]
+[ext_resource type="PackedScene" uid="uid://bf1s71hdouxvq" path="res://scenes/player.tscn" id="2_s6aef"]
+[ext_resource type="PackedScene" uid="uid://qstyrul43qmp" path="res://scenes/fart.tscn" id="3_o346k"]
+[ext_resource type="Theme" uid="uid://dc0k6y4c5kqq8" path="res://assets/Theme.tres" id="4_o0yqk"]
+
+[node name="Thubnail" type="Node2D"]
+
+[node name="Pipe" parent="." instance=ExtResource("1_e7fq6")]
+position = Vector2(510, 242)
+scale = Vector2(6, 6)
+gap_size = 40
+
+[node name="Player" parent="." instance=ExtResource("2_s6aef")]
+position = Vector2(382, 266)
+rotation = -0.436258
+scale = Vector2(6, 6)
+
+[node name="Fart" parent="." instance=ExtResource("3_o346k")]
+position = Vector2(310, 308)
+scale = Vector2(0.1, 0.1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("4_o0yqk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 80
+text = "  Farting
+  Cat"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 429.0
+offset_right = 308.0
+offset_bottom = 464.0
+theme = ExtResource("4_o0yqk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Game by UrbanKatze"

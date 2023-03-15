@@ -51,17 +51,18 @@ script = ExtResource("1_pfv0f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-frames = SubResource("SpriteFrames_ov02c")
-playing = true
+sprite_frames = SubResource("SpriteFrames_ov02c")
 offset = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, -1.25)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_fo3nw")
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -71,6 +72,6 @@ shape = SubResource("CapsuleShape2D_fo3nw")
 
 [node name="AudioFart" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_r5rlf")
-volume_db = -5.0
+volume_db = -8.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

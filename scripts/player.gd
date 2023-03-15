@@ -19,10 +19,10 @@ func _physics_process(delta: float) -> void:
 	$AnimatedSprite2D.modulate = Global.cat_colors[Global.current_cat_color]
 	
 	if Global.player_dead or Global.paused:
-		sprite.playing = false
+		sprite.stop()
 		return
 	else:
-		sprite.playing = true
+		sprite.play()
 	
 	velocity.y += GRAVITY * delta
 	
